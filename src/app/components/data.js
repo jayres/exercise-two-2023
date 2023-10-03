@@ -27,8 +27,8 @@ export default [
       },
     ],
     image: {
-      url: "https://via.placeholder.com/2000x1200",
-      alt: "A placeholder image",
+      url: "https://images.pexels.com/photos/261152/pexels-photo-261152.jpeg?cs=srgb&dl=pexels-pixabay-261152.jpg&fm=jpg",
+      alt: "Cool water",
     },
     publishedDate: "Wed Sep 04 2019 17:04:38 GMT-0400",
   },

@@ -13,7 +13,10 @@ export default function Article() {
 
   return (
     <main>
-      <div className={styles.articleHeader}>
+      <div
+        className={styles.articleHeader}
+        style={{ backgroundImage: `url('${articleData.image.url}')` }}
+      >
         <div className={styles.articleWrapper}>
           <h1>{articleData.title}</h1>
           <p>{new Date(articleData.publishedDate).toDateString()}</p>
@@ -22,9 +25,18 @@ export default function Article() {
       </div>
       <div className={styles.articleBody}>
         <div className={styles.articleWrapper}>
-          {articleData.articleText.map((textChunk) => (
-            <p>{textChunk.data}</p>
-          ))}
+          {articleData.articleText.map((textChunk) => {
+            switch (textChunk.type) {
+              case "p":
+                return <p>{textChunk.data}</p>;
+              case "h2":
+                return <h2>{textChunk.data}</h2>;
+              case "h3":
+                return <h3>{textChunk.data}</h3>;
+              default:
+                return <p>{textChunk.data}</p>;
+            }
+          })}
         </div>
       </div>
     </main>
